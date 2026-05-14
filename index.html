@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dembe Events & Hire</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#ffffff;
+color:#111;
+}
+
+.container{
+width:92%;
+max-width:1400px;
+margin:auto;
+}
+
+/* HEADER */
+header{
+background:#fff;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+}
+
+.top-nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-icon{
+width:140px;
+height:15px;
+position:relative;
+background:linear-gradient(145deg,#d4af37,#c99710,#b8860b);
+clip-path: polygon(50% 0%, 100% 100%, 50% 80%, 0% 100%);
+animation: tentWave 2.5s ease-in-out infinite;
+transform-origin: bottom center;
+}
+
+/* tent pole */
+.logo-icon::after{
+content:"";
+position:absolute;
+width:2px;
+height:32px;
+background:;
+left:50%;
+top:20%;
+transform:translateX(-50%);
+opacity:0.6;
+}
+
+/* base line */
+.logo-icon::before{
+content:"";
+position:absolute;
+width:70%;
+height:2px;
+background:;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+opacity:0.4;
+}
+
+/* animation */
+@keyframes tentWave{
+0%{
+transform:rotate(-1deg) scale(1);
+filter:brightness(1);
+}
+
+50%{
+transform:rotate(10deg) scale(1.03);
+filter:brightness(1.1);
+}
+
+100%{
+transform:rotate(-1deg) scale(1);
+filter:brightness(1);
+}
+}
+
+.logo-text h1{
+font-size:34px;
+font-weight:800;
+}
+
+.logo-text span{
+color:#c99710;
+font-weight:700;
+}
+
+/* hamburger */
+.hamburger{
+width:48px;
+height:48px;
+background:;
+color:black;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+font-size:30px;
+}
+
+/* MENU */
+.mobile-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:300px;
+height:100vh;
+background:#D4AF37;
+padding:60px 25px;
+transition:1.1s;
+z-index:2000;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.mobile-menu a{
+color:white;
+font-size:18px;
+}
+
+.mobile-menu.active{
+right:1;
+}
+
+/* HERO */
+.hero{
+min-height:10vh;
+background:(rgba(255,255,255,0.6), ),
+url(https://i.ibb.co/1G4sb4YB/IMG-1086.jpg);
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+}
+.hero-content{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:50px;
+}
+
+.hero-text{
+max-width:550px;
+}
+
+.hero-text h1{
+font-size:68px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:20px;
+margin-bottom:30px;
+color:#444;
+}
+
+.hero-btn{
+display:inline-block;
+background:#c99710;
+color:white;
+padding:16px 30px;
+border-radius:10px;
+font-weight:600;
+margin-right:10px;
+}
+
+/* SERVICES */
+.services{
+padding:80px 0;
+}
+
+.section-title{
+font-size:40px;
+margin-bottom:40px;
+font-weight:800;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.06);
+border:1px solid #eee;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+color:#c99710;
+margin-bottom:10px;
+}
+
+.card-content h2{
+color:#c99710;
+margin-top:10px;
+}
+
+/* BOOKING */
+.booking{
+padding:80px 0;
+}
+
+form{
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+border:1px solid #eee;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:8px;
+outline:none;
+}
+
+textarea{
+height:100px;
+}
+
+.whatsapp-btn{
+background:#25D366;
+color:white;
+padding:14px;
+border:none;
+width:100%;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+}
+
+.payfast{
+background:#c99710;
+color:white;
+padding:14px;
+border:none;
+width:100%;
+border-radius:8px;
+font-weight:700;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+margin-top:40px;
+border-top:1px solid #eee;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container top-nav">
+
+<div class="logo">
+<div class="logo-icon"></div>
+<div class="logo-text">
+<h1>Dembe</h1>
+<span>Events & Hire</span>
+</div>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Side Menu</title>
+
+  <style>
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: white;
+      padding: 20px;
+      transition: 0.3s ease;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .side-menu a {
+      display: block;
+      margin: 15px 0;
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Hamburger button -->
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<!-- Side menu -->
+<div id="sideMenu" class="side-menu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- JavaScript -->
+<script>
+function toggleMenu() {
+  document.getElementById("sideMenu").classList.toggle("open");
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").classList.remove("open");
+}
+</script>
+
+</body>
+</html>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="menu">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div class="hero-text">
+<h1>Reliable Event Hire Services</h1>
+<p>VIP Toilets & Mobile Fridges for your events at affordable prices.</p>
+
+<a href="#booking" class="hero-btn">Book Now</a>
+<a href="https://wa.me/27799109868" class="hero-btn">WhatsApp</a>
+</div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+<div class="container">
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://rhinotuffcanvastents.co.za/wp-content/uploads/2025/05/vip-toilets1.jpg">
+<div class="card-content">
+<h3>VIP Toilets</h3>
+<p>Clean luxury portable toilets for events.</p>
+<h2>R1200 / day</h2>
+</div>
+</div>
+
+<div class="card">
+<img src="https://armystores.co.za/army/wp-content/uploads/2020/10/mobile-.jpg">
+<div class="card-content">
+<h3>Mobile Fridge</h3>
+<p>Keep your drinks and food cold.</p>
+<h2>R800 / day</h2>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+<div class="container">
+
+<h2 class="section-title">Book Now</h2>
+
+<form>
+
+<input type="text" id="name" placeholder="Full Name">
+<input type="tel" id="phone" placeholder="Phone Number">
+<input type="date" id="date">
+
+<select id="service">
+<option>VIP Toilets</option>
+<option>Mobile Fridge</option>
+</select>
+
+<textarea id="message" placeholder="Extra details"></textarea>
+
+<button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">
+Book via WhatsApp
+</button>
+
+<form action="https://www.payfast.co.za/eng/process" method="post">
+<input type="hidden" name="merchant_id" value="YOUR_ID">
+<input type="hidden" name="merchant_key" value="YOUR_KEY">
+<input type="hidden" name="amount" value="1200">
+<input type="hidden" name="item_name" value="Booking Deposit">
+
+<button class="payfast">Pay Deposit</button>
+</form>
+
+</form>
+
+</div>
+</section>
+
+<footer id="contact">
+<p>Dembe Events & Hire</p>
+<p>+27 79 910 9868 | vusiphungo@gmail.com</p>
+<p>Limpopo, South Africa</p>
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+function sendWhatsApp(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let date=document.getElementById("date").value;
+let service=document.getElementById("service").value;
+let message=document.getElementById("message").value;
+
+let url="https://wa.me/27799109868?text="
++"Name: "+name+"%0a"
++"Phone: "+phone+"%0a"
++"Date: "+date+"%0a"
++"Service: "+service+"%0a"
++"Message: "+message;
+
+window.open(url,"_blank");
+}
+
+</script>
+
+</body>
+</html>
